@@ -10,6 +10,12 @@ public class WelcomeControllerL{
 	CurrentUser setToNil;
 	Lecturer lecturer = new Lecturer(id.getCurrentUser(),"");
 
+	@FXML
+    void onCheckVoteClick(ActionEvent event) {
+		lecturer.viewVotes();
+		lecturer.closeWindow(event);
+    }
+	
     @FXML
     void onLogoutClick(ActionEvent event) {
     	lecturer.logout();

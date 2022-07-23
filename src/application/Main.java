@@ -26,7 +26,7 @@ public class Main extends Application {
 		CurrentUser nil = new CurrentUser("");
 		nil.setCurrentUser(); //Ensure nobody is considered logged in when first startup
 		System.out.println("Datas loaded successfully.");
-		
+		mysqlconnect.ConnectDb();
 		launch(args);
 	}
 }
