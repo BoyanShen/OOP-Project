@@ -17,7 +17,7 @@ public class mysqlconnect {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/oop","root","");
-			JOptionPane.showMessageDialog(null, "Connection Established");
+			//JOptionPane.showMessageDialog(null, "Connection Established");
 			return conn;
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e);
@@ -34,6 +34,22 @@ public class mysqlconnect {
             
             while (rs.next()){   
                 list.add(new Student(rs.getString("id"), rs.getString("password"), rs.getInt("voteCount"), rs.getBoolean("hasVoted")));               
+            }
+            
+        } catch (Exception e) {
+        }
+        return list;
+    }
+	
+	public static ObservableList<Lecturer> getDataLecturers(){
+        Connection conn = ConnectDb();
+        ObservableList<Lecturer> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from lecturers");
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()){   
+                list.add(new Lecturer(rs.getString("id"), rs.getString("password")));               
             }
             
         } catch (Exception e) {

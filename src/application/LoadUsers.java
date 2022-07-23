@@ -6,43 +6,34 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import javafx.collections.ObservableList;
+
 public class LoadUsers {
 	private HashMap<String, String> student = new HashMap<String, String>();
-	private HashMap<String, String> lecturer =  new HashMap<String, String>();;
+	private HashMap<String, String> lecturer = new HashMap<String, String>();;
 	File myFile;
 	Scanner sc;
-	Student std;
-	Lecturer ltr;
-	
-	public void GetLoginDataFromFile() {
-		String u,p;
-		try {
-			//Store all student data into one hashmap
-			myFile = new File("Student.txt");
-			sc = new Scanner(myFile);
-			while (sc.hasNextLine()) {
-				u = sc.nextLine();
-				p = sc.nextLine();
-				std = new Student(u, p);
-				getStudent().put(std.getId(), std.getPassword());
-			}
-			
-			//Store all lecturer data into another hashmap
-			myFile = new File("Lecturer.txt");
-			sc = new Scanner(myFile);
-			while (sc.hasNextLine()) {
-				u = sc.nextLine();
-				p = sc.nextLine();
-				ltr = new Lecturer(u, p);
-				getLecturer().put(ltr.getId(), ltr.getPassword());
-			}
-			
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		}
+	ObservableList<Student> listS;
+	ObservableList<Lecturer> listL;
 
+	public void GetLoginDataFromFile() {
+		String u, p;
+		listS = mysqlconnect.getDataStudents();
+		listL = mysqlconnect.getDataLecturers();
+		
+		for (int i = 0; i < listS.size(); i++) {
+			u = (listS.get(i)).getId();
+			p = (listS.get(i)).getPassword();
+			getStudent().put(u, p);
+		}
+		
+		for (int i = 0; i < listL.size(); i++) {
+			u = (listL.get(i)).getId();
+			p = (listL.get(i)).getPassword();
+			getLecturer().put(u, p);
+		}
 	}
-	
+
 	public String getCurrentUser() {
 		String str = "";
 		myFile = new File("CurrentUser.txt");
