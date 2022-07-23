@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 public class LoginController {
 	
 	LoadUsers load = new LoadUsers();
+	CurrentUser currentUser;
 	String temp = "";
 	Student std;
 	Lecturer ltr;
@@ -53,9 +54,11 @@ public class LoginController {
 		
 		//User not found
 		else {	
+			temp = "";
 			JOptionPane.showMessageDialog(null, "User does not exist!");
 		}
-
+		currentUser = new CurrentUser(temp);
+		currentUser.setCurrentUser();
 	}
 	
 }

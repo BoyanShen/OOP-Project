@@ -3,18 +3,18 @@ package application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 public class WelcomeControllerL{
 	
-	Lecturer lecturer = new Lecturer("","");
-	
-	@FXML
-    private Button btnLogout;
+	LoadUsers id = new LoadUsers();
+	CurrentUser setToNil;
+	Lecturer lecturer = new Lecturer(id.getCurrentUser(),"");
 
     @FXML
     void onLogoutClick(ActionEvent event) {
     	lecturer.logout();
     	lecturer.closeWindow(event);
+    	System.out.println(id.getCurrentUser() + "(Lecturer) has logged out.");
+    	setToNil = new CurrentUser();
     }
 }

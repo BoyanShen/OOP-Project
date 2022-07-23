@@ -4,24 +4,19 @@ package application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 
 public class WelcomeControllerS{
 	
-	Student student = new Student("", "");
-	
-	@FXML
-    private Button btnLogout;
+	LoadUsers id = new LoadUsers();
+	CurrentUser setToNil;
+	Student student = new Student(id.getCurrentUser(), "");
 
     @FXML
     void onLogoutClick(ActionEvent event) {
     	student.logout();
     	student.closeWindow(event);
+    	System.out.println(id.getCurrentUser() + "(Student) has logged out.");
+    	setToNil = new CurrentUser();
     }
 }
