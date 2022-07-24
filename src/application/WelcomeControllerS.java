@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 
 public class WelcomeControllerS{
 	
-	LoadUsers id = new LoadUsers();
+	GetCurrentUser id = new GetCurrentUser();
 	CurrentUser setToNil;
 	Student student = new Student(id.getCurrentUser(), "");
 

@@ -1,8 +1,6 @@
 package application;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -32,21 +30,6 @@ public class LoadUsers {
 			p = (listL.get(i)).getPassword();
 			getLecturer().put(u, p);
 		}
-	}
-
-	public String getCurrentUser() {
-		String str = "";
-		myFile = new File("CurrentUser.txt");
-		try {
-			sc = new Scanner(myFile);
-			while (sc.hasNextLine()) {
-				str = sc.nextLine();
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return str;
 	}
 
 	public HashMap<String, String> getStudent() {

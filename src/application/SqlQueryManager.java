@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
 
-import javafx.collections.ObservableList;
 
 public class SqlQueryManager {
 	
