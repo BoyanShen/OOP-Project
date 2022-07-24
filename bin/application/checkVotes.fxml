@@ -7,8 +7,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VoteViewController">
    <children>
-      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#onBackClicked" prefHeight="25.0" prefWidth="128.0" text="Back" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="275.0" />
-      <AnchorPane layoutX="159.0" prefHeight="400.0" prefWidth="258.0">
+      <Button layoutX="275.0" layoutY="360.0" mnemonicParsing="false" onAction="#onBackClicked" prefHeight="25.0" prefWidth="128.0" text="Back" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="14.0" />
+      <AnchorPane prefHeight="400.0" prefWidth="258.0">
          <children>
             <TableView fx:id="table_students" prefHeight="400.0" prefWidth="258.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>

@@ -19,7 +19,7 @@
          </font>
       </Text>
       <Button layoutX="97.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="137.0" text="Edit Status" />
-      <Button layoutX="97.0" layoutY="249.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="137.0" text="Set Candidates" />
+      <Button layoutX="97.0" layoutY="249.0" mnemonicParsing="false" onAction="#onEditCandidateClick" prefHeight="25.0" prefWidth="137.0" text="Set Candidates" />
       <Button layoutX="97.0" layoutY="294.0" mnemonicParsing="false" onAction="#onLogoutClick" prefHeight="25.0" prefWidth="137.0" text="Logout" />
    </children>
 </AnchorPane>

@@ -16,6 +16,12 @@ public class WelcomeControllerL{
 		lecturer.closeWindow(event);
     }
 	
+	@FXML
+	void onEditCandidateClick(ActionEvent event) {
+		lecturer.editCandidates();
+		lecturer.closeWindow(event);
+	}
+	
     @FXML
     void onLogoutClick(ActionEvent event) {
     	lecturer.logout();

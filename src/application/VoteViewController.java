@@ -1,9 +1,6 @@
 package application;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
 import javafx.collections.ObservableList;
@@ -20,10 +17,6 @@ public class VoteViewController implements Initializable {
 	Lecturer lecturer = new Lecturer(id.getCurrentUser(),"");
 	
 	ObservableList<Student> list;
-	int index = -1;
-	Connection conn = null;
-	ResultSet rs = null;
-	PreparedStatement pst = null;
 	
 	@FXML
 	private TableColumn<Student, String> col_name;
