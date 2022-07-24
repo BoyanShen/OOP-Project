@@ -13,7 +13,7 @@
          </font>
       </Text>
       <Button layoutX="97.0" layoutY="149.0" mnemonicParsing="false" onAction="#onCheckVoteClick" prefHeight="25.0" prefWidth="137.0" text="Check Votes" />
-      <Text layoutX="120.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin!" wrappingWidth="196.13671112060547">
+      <Text fx:id="displayName" layoutX="120.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin!" wrappingWidth="196.13671112060547">
          <font>
             <Font size="26.0" />
          </font>

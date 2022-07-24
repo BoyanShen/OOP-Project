@@ -32,6 +32,7 @@ public class LoginController {
 		if (load.getStudent().containsKey(txtLogin.getText())) {
 			temp = txtLogin.getText();
 			if (txtPwd.getText().equals(load.getStudent().get(temp))) {
+				CurrentUser.getInstance().setCurrentUser(temp);
 				JOptionPane.showMessageDialog(null, "Login successful.");
 				std = new Student(txtLogin.getText(),txtPwd.getText());
 				std.login(event);
@@ -44,6 +45,7 @@ public class LoginController {
 		else if (load.getLecturer().containsKey(txtLogin.getText())) {
 			temp = txtLogin.getText();
 			if (txtPwd.getText().equals(load.getLecturer().get(temp))) {
+				CurrentUser.getInstance().setCurrentUser(temp);
 				JOptionPane.showMessageDialog(null, "Login successful.");
 				ltr = new Lecturer(txtLogin.getText(),txtPwd.getText());
 				ltr.login(event);
@@ -55,10 +57,9 @@ public class LoginController {
 		//User not found
 		else {	
 			temp = "";
+			CurrentUser.getInstance().setCurrentUser(temp);
 			JOptionPane.showMessageDialog(null, "User does not exist!");
 		}
-		currentUser = new CurrentUser(temp);
-		currentUser.setCurrentUser();
 	}
 	
 }

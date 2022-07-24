@@ -1,20 +1,32 @@
 package application;
 
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.text.Text;
 
-public class WelcomeControllerS{
+public class WelcomeControllerS implements Initializable{
 	
 	GetCurrentUser id = new GetCurrentUser();
-	CurrentUser setToNil;
 	Student student = new Student(id.getCurrentUser(), "");
 
+	@FXML
+    private Text displayName;
+	
     @FXML
     void onLogoutClick(ActionEvent event) {
     	student.logout();
     	student.closeWindow(event);
-    	System.out.println(id.getCurrentUser() + "(Student) has logged out.");
-    	setToNil = new CurrentUser();
+    	System.out.println(CurrentUser.getInstance().getCurrentUser() + "(Student) has logged out.");
+    	CurrentUser.getInstance().setCurrentUser("");
     }
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		displayName.setText(CurrentUser.getInstance().getCurrentUser());
+	}
 }
