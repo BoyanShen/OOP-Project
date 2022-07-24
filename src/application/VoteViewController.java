@@ -13,8 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class VoteViewController implements Initializable {
 
-	GetCurrentUser id = new GetCurrentUser();
-	Lecturer lecturer = new Lecturer(id.getCurrentUser(),"");
+	Lecturer lecturer = new Lecturer(CurrentUser.getInstance().getCurrentUser(),"");
 	
 	ObservableList<Student> list;
 	

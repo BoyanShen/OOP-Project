@@ -1,6 +1,5 @@
 package application;
 
-import javafx.event.ActionEvent;
 
 public abstract class User extends WindowManager{
 	private String id;
@@ -10,8 +9,6 @@ public abstract class User extends WindowManager{
 		this.setId(id);
 		this.setPassword(password);
     }
-    
-    abstract User login(ActionEvent event);
 
 	public String getId() {
 		return id;

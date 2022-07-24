@@ -15,8 +15,7 @@ import javafx.scene.input.MouseEvent;
 
 public class CandidateController implements Initializable{
 	
-	GetCurrentUser id = new GetCurrentUser();
-	Lecturer lecturer = new Lecturer(id.getCurrentUser(),"");
+	Lecturer lecturer = new Lecturer(CurrentUser.getInstance().getCurrentUser(),"");
 	SqlQueryManager query = new SqlQueryManager();
 	int index = -1;	
 	

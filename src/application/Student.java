@@ -1,8 +1,6 @@
 package application;
 
 
-import javafx.event.ActionEvent;
-
 
 public class Student extends User{
 
@@ -18,14 +16,6 @@ public class Student extends User{
 		// TODO Auto-generated constructor stub
 		this.voteCount = voteCount;
 		this.hasVoted = hasVoted;
-	}
-
-	@Override
-	User login(ActionEvent event) {
-		userWelcome("welcomeStudent.fxml");
-		closeWindow(event);
-		System.out.println(getId() + "(Student) has logged in.");
-		return null;
 	}
 
 	public int getVoteCount() {

@@ -11,8 +11,7 @@ import javafx.scene.text.Text;
 
 public class WelcomeControllerS implements Initializable{
 	
-	GetCurrentUser id = new GetCurrentUser();
-	Student student = new Student(id.getCurrentUser(), "");
+	Student student = new Student(CurrentUser.getInstance().getCurrentUser(), "");
 
 	@FXML
     private Text displayName;

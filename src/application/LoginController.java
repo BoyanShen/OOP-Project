@@ -11,10 +11,9 @@ import javafx.scene.control.TextField;
 public class LoginController {
 	
 	LoadUsers load = new LoadUsers();
+	LoginManager login = new LoginManager();
 	CurrentUser currentUser;
 	String temp = "";
-	Student std;
-	Lecturer ltr;
 	
 	@FXML
 	private TextField txtLogin;
@@ -34,8 +33,7 @@ public class LoginController {
 			if (txtPwd.getText().equals(load.getStudent().get(temp))) {
 				CurrentUser.getInstance().setCurrentUser(temp);
 				JOptionPane.showMessageDialog(null, "Login successful.");
-				std = new Student(txtLogin.getText(),txtPwd.getText());
-				std.login(event);
+				login.studentLogin(event);
 			} else {
 				JOptionPane.showMessageDialog(null, "Incorrect password.");
 			}
@@ -47,8 +45,7 @@ public class LoginController {
 			if (txtPwd.getText().equals(load.getLecturer().get(temp))) {
 				CurrentUser.getInstance().setCurrentUser(temp);
 				JOptionPane.showMessageDialog(null, "Login successful.");
-				ltr = new Lecturer(txtLogin.getText(),txtPwd.getText());
-				ltr.login(event);
+				login.lecturerLogin(event);
 			} else {
 				JOptionPane.showMessageDialog(null, "Incorrect password.");
 			}
