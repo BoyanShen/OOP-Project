@@ -33,7 +33,7 @@ public class mysqlconnect {
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()){   
-                list.add(new Student(rs.getString("id"), rs.getString("password"), rs.getInt("voteCount"), rs.getBoolean("hasVoted")));               
+                list.add(new Student(rs.getString("id"), rs.getString("password"), rs.getInt("voteCount"), rs.getBoolean("hasVoted"), rs.getBoolean("isCandidate")));               
             }
             
         } catch (Exception e) {
@@ -50,6 +50,22 @@ public class mysqlconnect {
             
             while (rs.next()){   
                 list.add(new Lecturer(rs.getString("id"), rs.getString("password")));               
+            }
+            
+        } catch (Exception e) {
+        }
+        return list;
+    }
+	
+	public static ObservableList<Student> getDataCandidates(){
+        Connection conn = ConnectDb();
+        ObservableList<Student> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from students where isCandidate = 1");
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()){   
+                list.add(new Student(rs.getString("id"), rs.getString("password"), rs.getInt("voteCount"), rs.getBoolean("hasVoted"), rs.getBoolean("isCandidate")));               
             }
             
         } catch (Exception e) {

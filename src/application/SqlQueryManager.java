@@ -15,15 +15,12 @@ public class SqlQueryManager {
 	
 	final void addUser(String id) {
 		conn = mysqlconnect.ConnectDb();
-		String sql = "insert into students (id,password,voteCount,hasVoted) values (?,?,?,?)";
+		String sql = "update students set isCandidate = 1 where id = ?";
 		try {
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, id);
-			pst.setString(2, "");
-			pst.setString(3, "0");
-			pst.setString(4, "0");
 			pst.execute();
-			JOptionPane.showMessageDialog(null, id + " is added successfully.");
+			JOptionPane.showMessageDialog(null, id + " is now a candidate.");
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e);
 		}
@@ -31,12 +28,12 @@ public class SqlQueryManager {
 	
 	final void deleteUser(String id) {
 		conn = mysqlconnect.ConnectDb();
-		String sql = "delete from students where id = ?";
+		String sql = "update students set isCandidate = 0 where id = ?";
 		try {
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, id);
 			pst.execute();
-			JOptionPane.showMessageDialog(null, id + " is removed successfully.");
+			JOptionPane.showMessageDialog(null, id + " is no longer a candidate.");
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e);
 		}

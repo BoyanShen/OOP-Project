@@ -25,10 +25,16 @@ public class CandidateController implements Initializable{
 	private TableColumn<Student, String> col_name;
 	
 	@FXML
+    private TableColumn<Student, Boolean> col_isCandidate;
+	
+    @FXML
+    private TableColumn<Student, Integer> col_voteCount;
+	
+	@FXML
 	private TableView<Student> table_students;
 	
 	@FXML
-    private TextField newStudent;
+    private TextField searchTab;
 	
 	@FXML
     private TextField id_selected;
@@ -48,9 +54,9 @@ public class CandidateController implements Initializable{
     }
 	
 	@FXML
-    void onAddClicked(ActionEvent event) {
-		query.addUser(newStudent.getText());
-		newStudent.setText("");
+    void onSetClicked(ActionEvent event) {
+		query.addUser(id_selected.getText());
+		id_selected.setText("");
 		list = mysqlconnect.getDataStudents();
 		table_students.setItems(list);
     }
@@ -73,6 +79,8 @@ public class CandidateController implements Initializable{
 	public void initialize(URL url, ResourceBundle rb) {
 		// TODO Auto-generated method stub
 		col_name.setCellValueFactory(new PropertyValueFactory<Student,String>("id"));
+		col_isCandidate.setCellValueFactory(new PropertyValueFactory<Student,Boolean>("isCandidate"));
+		col_voteCount.setCellValueFactory(new PropertyValueFactory<Student,Integer>("voteCount"));
 		list = mysqlconnect.getDataStudents();
 		table_students.setItems(list);
 	}

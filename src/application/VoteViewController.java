@@ -37,7 +37,7 @@ public class VoteViewController implements Initializable {
 		// TODO Auto-generated method stub
 		col_name.setCellValueFactory(new PropertyValueFactory<Student,String>("id"));
 		col_voteCount.setCellValueFactory(new PropertyValueFactory<Student,Integer>("voteCount"));
-		list = mysqlconnect.getDataStudents();
+		list = mysqlconnect.getDataCandidates();
 		//System.out.println((list.get(1)).getId());
 		table_students.setItems(list);
 
