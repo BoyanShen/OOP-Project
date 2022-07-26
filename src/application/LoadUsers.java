@@ -30,6 +30,7 @@ public class LoadUsers {
 			p = (listL.get(i)).getPassword();
 			getLecturer().put(u, p);
 		}
+		//System.out.println(getStudent());
 	}
 
 	public HashMap<String, String> getStudent() {

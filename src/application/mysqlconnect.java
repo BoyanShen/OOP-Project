@@ -72,4 +72,20 @@ public class mysqlconnect {
         }
         return list;
     }
+	
+	public static ObservableList<Status> getCanViewStatus(){
+		Connection conn = ConnectDb();
+        ObservableList<Status> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from status");
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()){   
+                list.add(new Status(rs.getBoolean("canView")));               
+            }
+            
+        } catch (Exception e) {
+        }
+        return list;
+	}
 }

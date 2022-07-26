@@ -50,4 +50,28 @@ public class SqlQueryManager {
 			JOptionPane.showMessageDialog(null, e);
 		}
 	}
+	
+	final void setViewable() {
+		conn = mysqlconnect.ConnectDb();
+		String sql = "update status set canView = 1 where 1";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.execute();
+			JOptionPane.showMessageDialog(null, "Voting is disabled. Result can now be viewed.");
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e);
+		}
+	}
+	
+	final void setUnviewable() {
+		conn = mysqlconnect.ConnectDb();
+		String sql = "update status set canView = 0 where 1";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.execute();
+			JOptionPane.showMessageDialog(null, "Voting is enabled. Result is now hidden.");
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e);
+		}
+	}
 }

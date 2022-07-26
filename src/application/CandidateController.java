@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 public class CandidateController implements Initializable{
@@ -49,9 +52,27 @@ public class CandidateController implements Initializable{
 	}
 	
 	@FXML
-    void onSearchClicked(ActionEvent event) {
-
-    }
+    void onSearchClicked(KeyEvent event) {
+		list = mysqlconnect.getDataStudents();
+		
+		FilteredList<Student> filteredData = new FilteredList<>(list, b -> true);  
+		 searchTab.textProperty().addListener((observable, oldValue, newValue) -> {
+		 filteredData.setPredicate(person -> {
+		    if (newValue == null || newValue.isEmpty()) {
+		     return true;
+		    }    
+		    String lowerCaseFilter = newValue.toLowerCase();
+		    
+		    if (person.getId().toLowerCase().indexOf(lowerCaseFilter) != -1 ) 
+		    	return true; // Filter matches username
+		    else  
+		    	return false; // Does not match.
+		   });
+		  });  
+		  SortedList<Student> sortedData = new SortedList<>(filteredData);  
+		  sortedData.comparatorProperty().bind(table_students.comparatorProperty());  
+		  table_students.setItems(sortedData);      
+	}		
 	
 	@FXML
     void onSetClicked(ActionEvent event) {
@@ -59,6 +80,7 @@ public class CandidateController implements Initializable{
 		id_selected.setText("");
 		list = mysqlconnect.getDataStudents();
 		table_students.setItems(list);
+		searchTab.setText("");
     }
 	
 	@FXML
@@ -67,6 +89,7 @@ public class CandidateController implements Initializable{
 		id_selected.setText("");
 		list = mysqlconnect.getDataStudents();
 		table_students.setItems(list);
+		searchTab.setText("");
 	}
 	
 	@FXML
