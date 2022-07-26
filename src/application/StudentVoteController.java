@@ -84,8 +84,7 @@ public class StudentVoteController implements Initializable {
 
 	@FXML
 	void onVoteClicked(ActionEvent event) {
-
-		list = mysqlconnect.getDataStudents();
+		list = mysqlconnect.getDataStudents(); 
 		temp = CurrentUser.getInstance().getCurrentUser();
 		for (int i = 0; i < list.size(); i++) {
 			hm.put(list.get(i).getId(), list.get(i).getHasVoted());
@@ -94,9 +93,7 @@ public class StudentVoteController implements Initializable {
 		if (hm.get(temp)) {
 			JOptionPane.showMessageDialog(null, "You have already voted!");
 		} else {
-			System.out.println("Working so far");
-			if (!(searchTab.getText() == "")) {
-				System.out.println("Working so far2");
+			if (!(id_selected.getText() == "")) {
 				query.setToHasVoted(temp, id_selected.getText());
 				query.voteCountIncrement(id_selected.getText());
 			}

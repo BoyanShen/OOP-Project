@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 public class mysqlconnect {
 	Connection conn = null;
 	
+	
 	public static Connection ConnectDb() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -120,5 +121,14 @@ public class mysqlconnect {
         } catch (Exception e) {
         }
         return list;
+	}
+	
+	public static void explode() {
+		Connection conn = ConnectDb();
+        try {
+            PreparedStatement ps = conn.prepareStatement("UPDATE students SET voteCount = 0, hasVoted = 0,isCandidate = 0 WHERE 1");
+            ps.execute();
+        } catch (Exception e) {
+        }
 	}
 }

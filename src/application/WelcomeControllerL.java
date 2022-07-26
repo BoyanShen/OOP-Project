@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
 public class WelcomeControllerL implements Initializable{
@@ -23,6 +24,17 @@ public class WelcomeControllerL implements Initializable{
 	
 	@FXML
     private Text displayName;
+	
+	@FXML
+    void onExplodeClick(MouseEvent event) {
+		choice = JOptionPane.showConfirmDialog(null, "This will reset all students to no longer be candidate, has not voted and has 0 votes. Are you sure?");
+		if (choice == 0) {
+			mysqlconnect.explode();
+			System.out.println(CurrentUser.getInstance().getCurrentUser() + "(Lecturer) has resetted everybody's data.");
+		}
+			
+		
+    }
 	
 	@FXML
     void onCheckVoteClick(ActionEvent event) {
