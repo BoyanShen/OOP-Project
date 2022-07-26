@@ -16,6 +16,18 @@ public class WelcomeControllerS implements Initializable{
 	@FXML
     private Text displayName;
 	
+	@FXML
+    void onVoteClick(ActionEvent event) {
+		student.studentVote();
+		student.closeWindow(event);
+    }
+	
+	@FXML
+    void onCheckClick(ActionEvent event) {
+		student.checkResult();
+		student.closeWindow(event);
+    }
+	
     @FXML
     void onLogoutClick(ActionEvent event) {
     	student.logout();

@@ -6,19 +6,20 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CandidateController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CandidateController">
    <children>
-      <TextField fx:id="searchTab" layoutX="12.0" layoutY="31.0" onKeyPressed="#onSearchClicked" prefHeight="25.0" prefWidth="237.0" promptText="Search for a student?" />
-      <Button layoutX="261.0" layoutY="63.0" mnemonicParsing="false" onAction="#onSetClicked" prefHeight="25.0" prefWidth="120.0" text="Set Candidate" />
-      <Button layoutX="261.0" layoutY="97.0" mnemonicParsing="false" onAction="#onRemoveClicked" prefHeight="25.0" prefWidth="120.0" text="Remove Candidate" />
-      <Button layoutX="261.0" layoutY="347.0" mnemonicParsing="false" onAction="#onBackClicked" prefHeight="25.0" prefWidth="120.0" text="Back" />
-      <TableView fx:id="table_students" layoutX="12.0" layoutY="56.0" onMouseClicked="#getSelected" prefHeight="316.0" prefWidth="237.0">
+      <TextField fx:id="searchTab" layoutX="12.0" layoutY="29.0" onKeyPressed="#onSearchClicked" prefHeight="25.0" prefWidth="326.0" promptText="Search for a student?" />
+      <Button layoutX="365.0" layoutY="61.0" mnemonicParsing="false" onAction="#onSetClicked" prefHeight="25.0" prefWidth="120.0" text="Set Candidate" />
+      <Button layoutX="365.0" layoutY="95.0" mnemonicParsing="false" onAction="#onRemoveClicked" prefHeight="25.0" prefWidth="120.0" text="Remove Candidate" />
+      <Button layoutX="365.0" layoutY="345.0" mnemonicParsing="false" onAction="#onBackClicked" prefHeight="25.0" prefWidth="120.0" text="Back" />
+      <TableView fx:id="table_students" layoutX="12.0" layoutY="56.0" onMouseClicked="#getSelected" prefHeight="316.0" prefWidth="326.0">
         <columns>
-          <TableColumn fx:id="col_name" prefWidth="98.66665649414062" text="Name" />
-            <TableColumn fx:id="col_isCandidate" prefWidth="81.33331298828125" text="Is Candidate?" />
-            <TableColumn fx:id="col_voteCount" prefWidth="56.00002034505209" text="Votes" />
+          <TableColumn fx:id="col_name" prefWidth="115.99999523162842" text="Name" />
+            <TableColumn fx:id="col_isCandidate" prefWidth="85.33331298828125" text="Is Candidate?" />
+            <TableColumn fx:id="col_hasVoted" prefWidth="69.33338928222656" text="Has voted?" />
+            <TableColumn fx:id="col_voteCount" prefWidth="55.33331298828125" text="Votes" />
         </columns>
       </TableView>
-      <TextField fx:id="id_selected" editable="false" layoutX="261.0" layoutY="31.0" prefHeight="25.0" prefWidth="120.0" promptText="Select a student..." />
+      <TextField fx:id="id_selected" editable="false" layoutX="365.0" layoutY="29.0" prefHeight="25.0" prefWidth="120.0" promptText="Select a student..." />
    </children>
 </AnchorPane>

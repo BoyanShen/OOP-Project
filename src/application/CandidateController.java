@@ -30,6 +30,9 @@ public class CandidateController implements Initializable{
 	@FXML
     private TableColumn<Student, Boolean> col_isCandidate;
 	
+	@FXML
+    private TableColumn<Student, Boolean> col_hasVoted;
+	
     @FXML
     private TableColumn<Student, Integer> col_voteCount;
 	
@@ -103,6 +106,7 @@ public class CandidateController implements Initializable{
 		// TODO Auto-generated method stub
 		col_name.setCellValueFactory(new PropertyValueFactory<Student,String>("id"));
 		col_isCandidate.setCellValueFactory(new PropertyValueFactory<Student,Boolean>("isCandidate"));
+		col_hasVoted.setCellValueFactory(new PropertyValueFactory<Student,Boolean>("hasVoted"));
 		col_voteCount.setCellValueFactory(new PropertyValueFactory<Student,Integer>("voteCount"));
 		list = mysqlconnect.getDataStudents();
 		table_students.setItems(list);

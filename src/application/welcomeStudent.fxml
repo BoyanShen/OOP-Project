@@ -12,13 +12,13 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button layoutX="96.0" layoutY="187.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="137.0" text="Vote" />
+      <Button layoutX="96.0" layoutY="187.0" mnemonicParsing="false" onAction="#onVoteClick" prefHeight="25.0" prefWidth="137.0" text="Vote" />
       <Text fx:id="displayName" layoutX="134.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User!" wrappingWidth="196.13671112060547">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
-      <Button layoutX="97.0" layoutY="229.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="137.0" text="Check Status" />
+      <Button layoutX="97.0" layoutY="229.0" mnemonicParsing="false" onAction="#onCheckClick" prefHeight="25.0" prefWidth="137.0" text="Check Status" />
       <Button fx:id="btnLogout" layoutX="97.0" layoutY="272.0" mnemonicParsing="false" onAction="#onLogoutClick" prefHeight="25.0" prefWidth="137.0" text="Logout" />
    </children>
 </AnchorPane>

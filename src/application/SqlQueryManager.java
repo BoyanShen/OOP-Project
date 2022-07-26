@@ -39,18 +39,6 @@ public class SqlQueryManager {
 		}
 	}
 	
-	final void findUser(String id) {
-		conn = mysqlconnect.ConnectDb();
-		String sql = "select id from students where id = ?";
-		try {
-			pst = conn.prepareStatement(sql);
-			pst.setString(1, id);
-			pst.execute();
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, e);
-		}
-	}
-	
 	final void setViewable() {
 		conn = mysqlconnect.ConnectDb();
 		String sql = "update status set canView = 1 where 1";
@@ -70,6 +58,31 @@ public class SqlQueryManager {
 			pst = conn.prepareStatement(sql);
 			pst.execute();
 			JOptionPane.showMessageDialog(null, "Voting is enabled. Result is now hidden.");
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e);
+		}
+	}
+	
+	final void setToHasVoted(String id, String voteTarget) {
+		conn = mysqlconnect.ConnectDb();
+		String sql = "update students set hasVoted = 1 where id = ?";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, id);
+			pst.execute();
+			JOptionPane.showMessageDialog(null, "You have voted for " + voteTarget + ".");
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e);
+		}
+	}
+	
+	final void voteCountIncrement(String id) {
+		conn = mysqlconnect.ConnectDb();
+		String sql = "update students set voteCount = (voteCount+1) where id = ?";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, id);
+			pst.execute();
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e);
 		}

@@ -88,4 +88,37 @@ public class mysqlconnect {
         }
         return list;
 	}
+	
+	public static ObservableList<Student> getDataChair(){
+        Connection conn = ConnectDb();
+        ObservableList<Student> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from students order by voteCount desc limit 2");
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()){   
+                list.add(new Student(rs.getString("id"), rs.getString("password"), rs.getInt("voteCount"), rs.getBoolean("hasVoted"), rs.getBoolean("isCandidate")));               
+            }
+            
+        } catch (Exception e) {
+        }
+        return list;
+    }
+	
+	public static ObservableList<Student> getNotMe() {
+		Connection conn = ConnectDb();
+        ObservableList<Student> list = FXCollections.observableArrayList();
+        String str = CurrentUser.getInstance().getCurrentUser();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from students where isCandidate = 1 and id !='" + str + "'");
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()){   
+                list.add(new Student(rs.getString("id"), rs.getString("password"), rs.getInt("voteCount"), rs.getBoolean("hasVoted"), rs.getBoolean("isCandidate")));               
+            }
+            
+        } catch (Exception e) {
+        }
+        return list;
+	}
 }
