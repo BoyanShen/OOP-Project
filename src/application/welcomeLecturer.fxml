@@ -4,26 +4,44 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="331.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.WelcomeControllerL">
    <children>
-      <Text layoutX="79.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome back," wrappingWidth="196.13671112060547">
+      <Rectangle fill="#021d36" height="342.0" layoutY="71.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
+      <Rectangle fill="#021d36" height="46.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#743ad7" height="35.0" layoutX="10.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" width="311.0" />
+      <Circle fill="WHITE" layoutX="304.0" layoutY="20.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="74.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome back," textAlignment="CENTER" wrappingWidth="183.47008514404297">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Button layoutX="97.0" layoutY="149.0" mnemonicParsing="false" onAction="#onCheckVoteClick" prefHeight="25.0" prefWidth="137.0" text="Check Votes" />
-      <Text fx:id="displayName" layoutX="120.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin!" wrappingWidth="196.13671112060547">
+      <Button layoutX="97.0" layoutY="149.0" mnemonicParsing="false" onAction="#onCheckVoteClick" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #743ad7;" text="Check Votes" textFill="WHITE">
          <font>
-            <Font size="26.0" />
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Text fx:id="displayName" fill="WHITE" layoutX="67.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin!" textAlignment="CENTER" wrappingWidth="196.13671112060547">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
          </font>
       </Text>
-      <Button layoutX="97.0" layoutY="200.0" mnemonicParsing="false" onAction="#onStatusClick" prefHeight="25.0" prefWidth="137.0" text="Edit Status" />
-      <Button layoutX="97.0" layoutY="249.0" mnemonicParsing="false" onAction="#onEditCandidateClick" prefHeight="25.0" prefWidth="137.0" text="Set Candidates" />
-      <Button layoutX="97.0" layoutY="294.0" mnemonicParsing="false" onAction="#onLogoutClick" prefHeight="25.0" prefWidth="137.0" text="Logout" />
-      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="290.0" layoutY="14.0" onMouseClicked="#onExplodeClick" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="97.0" layoutY="200.0" mnemonicParsing="false" onAction="#onStatusClick" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #743ad7;" text="Edit Status" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="97.0" layoutY="249.0" mnemonicParsing="false" onAction="#onEditCandidateClick" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #743ad7;" text="Set Candidates" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="96.0" layoutY="296.0" mnemonicParsing="false" onAction="#onLogoutClick" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #743ad7;" text="Logout" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ImageView fitHeight="25.0" fitWidth="34.0" layoutX="292.0" layoutY="7.0" onMouseClicked="#onExplodeClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images%20used/bin.png" />
          </image>

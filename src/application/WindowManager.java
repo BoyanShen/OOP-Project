@@ -15,7 +15,7 @@ public abstract class WindowManager {
     final void userWelcome(String fxml) {
     	try {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource(fxml));
-			Scene scene2 = new Scene(root,400,400);
+			Scene scene2 = new Scene(root,331,400);
 			scene2.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			Stage Window2 = new Stage();
 			Window2.initModality(Modality.APPLICATION_MODAL);
@@ -30,7 +30,7 @@ public abstract class WindowManager {
     final void logout() {
     	try {
     		AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("loginPage.fxml"));
-    		Scene scene2 = new Scene(root,400,400);
+    		Scene scene2 = new Scene(root,349,400);
     		scene2.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
     		Stage Window2 = new Stage();
     		Window2.initModality(Modality.APPLICATION_MODAL);
@@ -60,7 +60,7 @@ public abstract class WindowManager {
     final void editCandidates() {
     	try {
     		AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("editCandidate.fxml"));
-    		Scene scene2 = new Scene(root,417,400);
+    		Scene scene2 = new Scene(root,506,400);
     		scene2.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
     		Stage Window2 = new Stage();
     		Window2.initModality(Modality.APPLICATION_MODAL);
@@ -75,7 +75,7 @@ public abstract class WindowManager {
     final void checkResult() {
     	try {
     		AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("userStatus.fxml"));
-    		Scene scene2 = new Scene(root,417,400);
+    		Scene scene2 = new Scene(root,319,400);
     		scene2.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
     		Stage Window2 = new Stage();
     		Window2.initModality(Modality.APPLICATION_MODAL);
@@ -90,7 +90,7 @@ public abstract class WindowManager {
     final void studentVote() {
     	try {
     		AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("votingPage.fxml"));
-    		Scene scene2 = new Scene(root,417,400);
+    		Scene scene2 = new Scene(root,382,400);
     		scene2.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
     		Stage Window2 = new Stage();
     		Window2.initModality(Modality.APPLICATION_MODAL);

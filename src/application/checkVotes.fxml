@@ -4,18 +4,31 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VoteViewController">
    <children>
-      <Button layoutX="275.0" layoutY="360.0" mnemonicParsing="false" onAction="#onBackClicked" prefHeight="25.0" prefWidth="128.0" text="Back" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="14.0" />
+      <Rectangle fill="#021d36" height="378.0" layoutY="25.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="417.0" />
+      <Rectangle fill="#743ad7" height="25.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="417.0" />
+      <Button layoutX="275.0" layoutY="360.0" mnemonicParsing="false" onAction="#onBackClicked" prefHeight="25.0" prefWidth="128.0" style="-fx-background-color: #743ad7;" text="Back" textFill="WHITE" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <AnchorPane prefHeight="400.0" prefWidth="258.0">
          <children>
-            <TableView fx:id="table_students" prefHeight="400.0" prefWidth="258.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="table_students" layoutY="22.0" prefHeight="378.0" prefWidth="266.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0">
               <columns>
                 <TableColumn fx:id="col_name" prefWidth="180.66666162014008" text="Name" />
-                <TableColumn fx:id="col_voteCount" minWidth="0.0" prefWidth="80.00001525878906" text="Votes" />
+                <TableColumn fx:id="col_voteCount" minWidth="0.0" prefWidth="84.00001525878906" text="Votes" />
               </columns>
             </TableView>
+            <Text fill="WHITE" layoutX="158.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of Candidates" textAlignment="CENTER" wrappingWidth="107.4700927734375">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>
