@@ -37,17 +37,21 @@ public class StatusController implements Initializable{
 		// TODO Auto-generated method stub
 		canView = mysqlconnect.getCanViewStatus();
 		if (canView.get(0).getCanView()) {
-			chairpeople = mysqlconnect.getDataChair();
-			classChair.setText(chairpeople.get(0).getId());
-			classViceChair.setText(chairpeople.get(1).getId());
-//			System.out.println(CurrentUser.getInstance().getCurrentUser());
-//			System.out.println(chairpeople.get(0).getId());
-			temp = CurrentUser.getInstance().getCurrentUser();
-			if(temp.equals(chairpeople.get(0).getId())) {
-				yourPos.setText("Class Chairperson");
+			try {
+				chairpeople = mysqlconnect.getDataChair();
+				classChair.setText(chairpeople.get(0).getId());
+				classViceChair.setText(chairpeople.get(1).getId());
+//				System.out.println(CurrentUser.getInstance().getCurrentUser());
+//				System.out.println(chairpeople.get(0).getId());
+				temp = CurrentUser.getInstance().getCurrentUser();
+				if(temp.equals(chairpeople.get(0).getId())) {
+					yourPos.setText("Class Chairperson");
+				}
+				else if (temp.equals(chairpeople.get(1).getId()))
+					yourPos.setText("Vice-Chair");
+			} catch (Exception e) {
+				
 			}
-			else if (temp.equals(chairpeople.get(1).getId()))
-				yourPos.setText("Vice-Chair");
 		}
 	}
 }

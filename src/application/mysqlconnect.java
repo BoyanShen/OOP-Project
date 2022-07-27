@@ -94,7 +94,7 @@ public class mysqlconnect {
         Connection conn = ConnectDb();
         ObservableList<Student> list = FXCollections.observableArrayList();
         try {
-            PreparedStatement ps = conn.prepareStatement("select * from students order by voteCount desc limit 2");
+            PreparedStatement ps = conn.prepareStatement("select * from students where isCandidate = 1 order by voteCount desc limit 2");
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()){   
