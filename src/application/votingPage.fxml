@@ -25,7 +25,7 @@
           <TableColumn fx:id="col_name" prefWidth="235.99998982747397" />
         </columns>
       </TableView>
-      <TextField fx:id="id_selected" layoutX="261.0" layoutY="31.0" prefHeight="25.0" prefWidth="111.0" promptText="Select Candidate..." />
+      <TextField fx:id="id_selected" editable="false" layoutX="261.0" layoutY="31.0" prefHeight="25.0" prefWidth="111.0" promptText="Select Candidate..." />
       <TextField fx:id="searchTab" layoutX="12.0" layoutY="31.0" onKeyPressed="#onKeyPressed" prefHeight="25.0" prefWidth="237.0" promptText="Find a candidate..." />
       <Rectangle fill="#743ad7" height="33.0" layoutY="-7.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="382.0" />
       <Text fill="WHITE" layoutX="137.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of Candidates" textAlignment="CENTER" wrappingWidth="107.4700927734375">

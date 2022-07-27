@@ -1,0 +1,80 @@
+===========================Login Page================================================
+
+
+Logging in using a student account will lead you to the student's welcome page.
+
+====Student Privilages====
+- Ability to view the list of candidates for voting
+- Ability to vote for the candidates
+- View who the Class Chairperson and Vice Chairperson are, and their own role
+
+====Student Limitations====
+- Cannot see vote number
+- Cannot see themselves on the list (Cannot self-vote)
+- Can only vote once and cannot withdraw vote
+- Cannot view result during voting period (Voting Mode)
+- Cannot vote after results are released (Display Mode)
+
+
+
+
+Logging in using a lecturer account will lead you to the lecturer's welcome page.
+
+====Lecturer Privilages====
+- Ability to view all students status(eg. name, whether candidate, whether has voted, vote count)
+- Ability to view and edit the list of candidates for voting
+- Ability to toggle between voting mode and display mode
+
+====Lecturer Limitations====
+- Cannot vote for students
+
+
+
+
+
+
+
+===========================Welcome Page================================================
+
+
+For Students:
+
+====Vote for a candidate====
+- Function to search for specific candidate by typing in search bar
+- Click on a Candidate's name to select them
+- Click the vote button to vote for the selected candidate
+- Disabled voting after voting once for anyone
+- Back button to go back to welcome page
+
+====Check results====
+- Display of the highest 2 voted candidates as the chairperson and vice-chairperson
+- Display the current user's role
+- Back button to go back to welcome page
+
+====Log out====
+- Log user out and display in compiler log.
+
+
+
+
+For Lecturers:
+
+====Check Votes====
+- Displays the entire list of candidates and how many votes each of them have
+- Back button to go back to welcome page
+
+====Edit status====
+- Prompts user to double confirm their option, to toggle between Voting mode and Display mode.
+
+====Edit Candidates====
+- Function to search for specific student by typing in search bar
+- Click on a student's name to select them
+- Click the set candidate button to set selected student as candidate
+- Click the remove candidate button to remove selected student from candidates
+- Display all students' status (eg. name, whether candidate, has voted and vote count)
+
+====Bin icon====
+- Prompts user to double confirm their option, to reset all students' candidate status, vote status and vote counts to 0.
+
+====Log out====
+- Log user out and display in compiler log.
