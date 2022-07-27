@@ -20,6 +20,7 @@ public abstract class WindowManager {
 			Stage Window2 = new Stage();
 			Window2.initModality(Modality.APPLICATION_MODAL);
 			Window2.setScene(scene2);
+			Window2.setTitle("Welcome, " + CurrentUser.getInstance().getCurrentUser() + "!");
 			Window2.show();
 		}
 		catch(IOException e){
@@ -35,6 +36,7 @@ public abstract class WindowManager {
     		Stage Window2 = new Stage();
     		Window2.initModality(Modality.APPLICATION_MODAL);
     		Window2.setScene(scene2);
+    		Window2.setTitle("Login to C-in");
     		Window2.show();
     		}
     	catch(IOException e){
@@ -50,6 +52,7 @@ public abstract class WindowManager {
     		Stage Window2 = new Stage();
     		Window2.initModality(Modality.APPLICATION_MODAL);
     		Window2.setScene(scene2);
+    		Window2.setTitle("Viewing votes");
     		Window2.show();
     		}
     	catch(IOException e){
@@ -65,6 +68,7 @@ public abstract class WindowManager {
     		Stage Window2 = new Stage();
     		Window2.initModality(Modality.APPLICATION_MODAL);
     		Window2.setScene(scene2);
+    		Window2.setTitle("Editing candidate list");
     		Window2.show();
     		}
     	catch(IOException e){
@@ -80,6 +84,7 @@ public abstract class WindowManager {
     		Stage Window2 = new Stage();
     		Window2.initModality(Modality.APPLICATION_MODAL);
     		Window2.setScene(scene2);
+    		Window2.setTitle("Result display");
     		Window2.show();
     		}
     	catch(IOException e){
@@ -95,6 +100,7 @@ public abstract class WindowManager {
     		Stage Window2 = new Stage();
     		Window2.initModality(Modality.APPLICATION_MODAL);
     		Window2.setScene(scene2);
+    		Window2.setTitle("Vote for the ideal one!");
     		Window2.show();
     		}
     	catch(IOException e){
